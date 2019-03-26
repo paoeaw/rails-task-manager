@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="header d-flex justify-content-between align-items-center">
+    <h1 class="my-3"><%= @task.title %></h1>
+    <button type="button" class="btn border rounded"><%= link_to "Edit this task", task_edit_path %></button>
+  </div>
+  <p class="alert alert-secondary py-4"><%= @task.details %></p>
+  <p class="border-bottom py-4"><%= check_box 'task', 'task', {:checked => @task.completed} %> This task is complete</p>
+  <%= link_to "Back to list", tasks_path %>
+</div>

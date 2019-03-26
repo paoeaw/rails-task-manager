@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="text-center m-3">Tasks</h1>
+  <div class="tasks py-4 border-bottom mb-4">
+    <% @tasks.each do |task| %>
+    <h4 class="d-flex align-items-center"><input type="checkbox" <%= "checked" if task.completed %>>&nbsp<%= link_to task['title'], task_path(id: task['id']) %>&nbsp - &nbsp<%= link_to raw("<small><i class='far fa-trash-alt'></i></small>"), task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></h4>
+    <% end %>
+  </div>
+  <%= link_to "+ Add a new task", tasks_new_path %>
+</div>
